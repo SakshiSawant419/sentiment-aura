@@ -30,11 +30,16 @@ logger = logging.getLogger("sentiment-aura")
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+
 if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY is missing from .env")
+    raise ValueError("OPENAI_API_KEY is not set in environment variables")
+
+# Optional:Deepgram too
+if not DEEPGRAM_API_KEY:
+    raise ValueError("DEEPGRAM_API_KEY is not set in environment variables")
 
 client = AsyncOpenAI(api_key=OPENAI_API_KEY)
-
 # -------------------------------------------------------
 # FastAPI App
 # -------------------------------------------------------
