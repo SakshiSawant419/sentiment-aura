@@ -174,7 +174,7 @@ const SentimentVisualization = ({ sentiment }) => {
       
         if (type === 'positive') {
           // FIRE/SUN: Pure warm spectrum
-          baseHue = 15 + (valence * 45);       // Hue 15-60 (red-orange to yellow)
+          baseHue = 25 + (valence * 25);       // Hue 15-60 (red-orange to yellow)
           saturation = 85 + (intensity * 15);  // Very saturated (85-100)
           brightness = 70 + (score * 25);      // Very bright (70-95)
           
