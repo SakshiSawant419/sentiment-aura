@@ -53,20 +53,18 @@ app = FastAPI(
 # CORS Configuration for Production
 # -------------------------------------------------------
 app.add_middleware(
-    CORSMiddleware,
+    CORSMiddleware,  
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:3000",
         "https://sentiment-aura.vercel.app",
-        "https://sentiment-aura-sigma.vercel.app",     
-        "https://sentiment-aura-*.vercel.app",          
-        "https://*.vercel.app", 
-    ]
+        "https://sentiment-aura-sigma.vercel.app",
+        "https://sentiment-aura-*.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # -------------------------------------------------------
 # Request / Response Models
 # -------------------------------------------------------
