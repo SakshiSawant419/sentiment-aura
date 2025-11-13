@@ -44,10 +44,17 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Enable frontend access
+# -------------------------------------------------------
+# CORS Configuration for Production
+# -------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",                    # Local dev
+        "http://localhost:3000",                    # Alternative local
+        "https://sentiment-aura.vercel.app",        # Production
+        "https://sentiment-aura-*.vercel.app",      # Preview deployments
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -166,9 +173,13 @@ async def server_error_handler(request: Request, exc):
 # -------------------------------------------------------
 if __name__ == "__main__":
     import uvicorn
+    import os
+    
+    port = int(os.environ.get("PORT", 8000))  # Railway provides PORT
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True
+        port=port,
+        reload=False,  # Disable reload in production
+        log_level="info"
     )
