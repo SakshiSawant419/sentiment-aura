@@ -1,6 +1,6 @@
 <h1 align="center">Sentiment Aura - Real-time emotional visualization</h1>
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+![Demo App](/frontend/public/Screenshot-for-readme.png)
 
 ## Highlights:
 
