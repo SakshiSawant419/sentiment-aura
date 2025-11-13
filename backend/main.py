@@ -55,11 +55,13 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",                    # Local dev
-        "http://localhost:3000",                    # Alternative local
-        "https://sentiment-aura.vercel.app",        # Production
-        "https://sentiment-aura-*.vercel.app",      # Preview deployments
-    ],
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://sentiment-aura.vercel.app",
+        "https://sentiment-aura-sigma.vercel.app",     
+        "https://sentiment-aura-*.vercel.app",          
+        "https://*.vercel.app", 
+    ]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
