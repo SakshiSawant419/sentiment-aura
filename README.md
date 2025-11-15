@@ -1,4 +1,4 @@
-<h1 align="center">Sentiment Aura 🎨🎤</h1>
+<h1 align="center">Sentiment Aura</h1>
 
 <p align="center">
   <strong>Real-time emotional visualization powered by AI sentiment analysis and generative art</strong>
